@@ -1,4 +1,3 @@
-/* Общие стили */
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +14,6 @@ body {
   position: relative;
 }
 
-/* Фоновая анимация */
 .background {
   position: fixed;
   top: -50%;
@@ -43,7 +41,6 @@ body {
   backdrop-filter: blur(10px);
 }
 
-/* Анимации появления */
 .fade-in {
   animation: fadeIn 1s ease forwards;
 }
@@ -119,7 +116,7 @@ strong {
   color: #000;
 }
 
-/* Адаптив */
+
 @media (max-width: 600px) {
   .container {
     padding: 30px 20px;
