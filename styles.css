@@ -1,4 +1,4 @@
-body { 
+body {
   margin: 0;
   height: 100vh;
   display: flex;
@@ -6,7 +6,6 @@ body {
   align-items: center;
   background: linear-gradient(135deg, #80deea, #e0f7fa);
   font-family: 'Segoe UI', sans-serif;
-  overflow: hidden;
 }
 
 .title {
@@ -19,6 +18,13 @@ body {
   color: #004d40;
   z-index: 20;
   font-family: 'Segoe UI', sans-serif;
+}
+
+.scene {
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+  overflow: hidden;
 }
 
 .cube {
