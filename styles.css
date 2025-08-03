@@ -1,18 +1,23 @@
 body {
   margin: 0;
   height: 100vh;
+  background: linear-gradient(135deg, #80deea, #e0f7fa);
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #80deea, #e0f7fa);
   font-family: 'Segoe UI', sans-serif;
   overflow: hidden;
 }
 
 .scene {
-  width: 300px;
-  height: 300px;
-  perspective: 1000px;
+  width: 320px;
+  height: 320px;
+  perspective: 1200px;
+  cursor: grab;
+}
+
+.scene:active {
+  cursor: grabbing;
 }
 
 .cube {
@@ -21,27 +26,38 @@ body {
   position: relative;
   transform-style: preserve-3d;
   transform: rotateX(-20deg) rotateY(20deg);
-  transition: transform 0.5s ease;
+  transition: transform 0.3s ease;
 }
 
 .face {
   position: absolute;
   width: 300px;
   height: 300px;
+  margin: 10px;
   padding: 20px;
   box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.95);
+  background: linear-gradient(145deg, #ffffff, #f1f1f1);
   border: 2px solid #00796b;
-  border-radius: 12px;
+  border-radius: 16px;
   text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .face h2 {
-  margin-bottom: 10px;
   color: #00796b;
+  margin-bottom: 10px;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  margin: 5px 0;
 }
 
 .face.front  { transform: rotateY(  0deg) translateZ(150px); }
@@ -51,5 +67,8 @@ body {
 .face.top    { transform: rotateX( 90deg) translateZ(150px); }
 .face.bottom { transform: rotateX(-90deg) translateZ(150px); }
 
-ul { padding: 0; list-style: none; }
-li { margin: 5px 0; }
+a {
+  color: #00796b;
+  text-decoration: none;
+  font-weight: bold;
+}
