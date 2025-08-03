@@ -62,3 +62,25 @@ document.addEventListener('touchend', () => {
   isDragging = false;
   enableTransition();
 });
+
+
+const faceAngles = {
+  front:  { x: 0,   y: 0   },
+  back:   { x: 0,   y: 180 },
+  right:  { x: 0,   y: 90  },
+  left:   { x: 0,   y: -90 },
+  top:    { x: 90,  y: 0   },
+  bottom: { x: -90, y: 0   }
+};
+
+document.querySelectorAll('.controls button').forEach(button => {
+  button.addEventListener('click', () => {
+    const face = button.dataset.face;
+    const angles = faceAngles[face];
+    rotateX = angles.x;
+    rotateY = angles.y;
+    enableTransition();
+    updateCube();
+  });
+});
+
