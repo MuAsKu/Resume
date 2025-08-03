@@ -5,104 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Мумбаев Асан</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 </head>
 <body>
-  <div class="resume-container">
-    <h1 class="title">
-      <span class="title-letter">Р</span>
-      <span class="title-letter">е</span>
-      <span class="title-letter">з</span>
-      <span class="title-letter">ю</span>
-      <span class="title-letter">м</span>
-      <span class="title-letter">е</span>
-    </h1>
+  <div class="container">
+    <h1 class="title">Резюме</h1>
 
     <div class="scene">
       <div class="cube" id="cube">
-        <div class="face front active">
-          <div class="face-content">
-            <h2>О себе</h2>
-            <p>Мумбаев Асан Курсаналиевич, 18 лет, г. Ош.<br>Телефон: <span class="highlight">773 67 42 32</span></p>
-          </div>
+        <div class="face front">
+          <h2>О себе</h2>
+          <p>Мумбаев Асан Курсаналиевич, 18 лет, г. Ош. Телефон: 773 67 42 32.</p>
         </div>
-
         <div class="face back">
-          <div class="face-content">
-            <h2>Цель</h2>
-            <p>Стажировка фронтенд-разработчиком для получения опыта и трудоустройства.</p>
-          </div>
+          <h2>Цель</h2>
+          <p>Стажировка фронтенд-разработчиком для получения опыта и трудоустройства.</p>
         </div>
-
         <div class="face right">
-          <div class="face-content">
-            <h2>Навыки</h2>
-            <ul>
-              <li><span class="skill-icon">✦</span> HTML5</li>
-              <li><span class="skill-icon">✦</span> CSS3</li>
-              <li><span class="skill-icon">✦</span> JavaScript</li>
-              <li><span class="skill-icon">✦</span> React</li>
-            </ul>
-          </div>
+          <h2>Навыки</h2>
+          <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>React</li>
+          </ul>
         </div>
-
         <div class="face left">
-          <div class="face-content">
-            <h2>Образование</h2>
-            <p>Курсы фронтенд-разработки в <span class="highlight">GEEKS</span>, окончание 01.08.2025.</p>
-          </div>
+          <h2>Образование</h2>
+          <p>Курсы фронтенд в GEEKS, окончание 01.08.2025.</p>
         </div>
-
         <div class="face top">
-          <div class="face-content">
-            <h2>Опыт</h2>
-            <p>Пока без коммерческого опыта, но есть учебные проекты и готовность учиться.</p>
-          </div>
+          <h2>Опыт</h2>
+          <p>Пока без опыта, но готов учиться и работать в команде.</p>
         </div>
-
         <div class="face bottom">
-          <div class="face-content">
-            <h2>Контакты</h2>
-            <p><span class="contact-icon">📞</span> 773 67 42 32<br>
-          </div>
+          <h2>Контакты</h2>
+          <p>Тел: 773 67 42 32</p>
         </div>
       </div>
     </div>
 
     <div class="controls">
-      <button data-face="front" aria-label="О себе">
-        <span class="btn-icon">👤</span>
-        <span class="btn-text">О себе</span>
-      </button>
-      <button data-face="back" aria-label="Цель">
-        <span class="btn-icon">🎯</span>
-        <span class="btn-text">Цель</span>
-      </button>
-      <button data-face="right" aria-label="Навыки">
-        <span class="btn-icon">💻</span>
-        <span class="btn-text">Навыки</span>
-      </button>
-      <button data-face="left" aria-label="Образование">
-        <span class="btn-icon">🎓</span>
-        <span class="btn-text">Образование</span>
-      </button>
-      <button data-face="top" aria-label="Опыт">
-        <span class="btn-icon">📊</span>
-        <span class="btn-text">Опыт</span>
-      </button>
-      <button data-face="bottom" aria-label="Контакты">
-        <span class="btn-icon">📱</span>
-        <span class="btn-text">Контакты</span>
-      </button>
-    </div>
-
-    <div class="bg-elements">
-      <div class="circle circle-1"></div>
-      <div class="circle circle-2"></div>
-      <div class="circle circle-3"></div>
+      <button data-face="front">О себе</button>
+      <button data-face="back">Цель</button>
+      <button data-face="right">Навыки</button>
+      <button data-face="left">Образование</button>
+      <button data-face="top">Опыт</button>
+      <button data-face="bottom">Контакты</button>
     </div>
   </div>
 
