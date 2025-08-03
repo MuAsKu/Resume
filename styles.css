@@ -103,11 +103,15 @@ body {
     width: 200px;
     height: 200px;
   }
+  .title {
+    margin-bottom: 80px;
+  }
   .face {
     padding: 15px;
   }
   .controls {
     gap: 8px;
+    margin-top: 60px;
   }
   .controls button {
     padding: 6px 12px;
