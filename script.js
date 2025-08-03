@@ -22,7 +22,6 @@ document.addEventListener('mouseup', () => {
   isDragging = false;
 });
 
-// Для тач-устройств
 document.addEventListener('touchstart', (e) => {
   isDragging = true;
   startX = e.touches[0].clientX;
