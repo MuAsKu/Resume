@@ -133,7 +133,6 @@ body {
   background: rgba(37, 99, 235, 0.1);
 }
 
-/* Позиционирование граней */
 .face.front  { transform: rotateY(0deg) translateZ(140px); }
 .face.back   { transform: rotateY(180deg) translateZ(140px); }
 .face.right  { transform: rotateY(90deg) translateZ(140px); }
@@ -141,7 +140,6 @@ body {
 .face.top    { transform: rotateX(90deg) translateZ(140px); }
 .face.bottom { transform: rotateX(-90deg) translateZ(140px); }
 
-/* Кнопки управления */
 .controls {
   display: flex;
   flex-wrap: wrap;
@@ -174,7 +172,6 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Адаптивность */
 @media (min-width: 768px) {
   .container {
     flex-direction: row;
@@ -199,7 +196,6 @@ body {
   .face.bottom { transform: rotateX(-90deg) translateZ(160px); }
 }
 
-/* Анимация при загрузке */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
