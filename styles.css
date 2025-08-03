@@ -35,6 +35,7 @@ body {
   transform-style: preserve-3d;
   transform: rotateX(-15deg) rotateY(15deg);
   transition: transform 0.5s ease;
+  cursor: grab;
 }
 
 .face {
