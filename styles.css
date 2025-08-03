@@ -1,10 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   background: linear-gradient(135deg, #80deea, #e0f7fa);
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
-  padding-top: 60px;
-  box-sizing: border-box;
+  padding-top: 130px; 
+  color: #004d40;
 }
 
 .header {
@@ -12,59 +16,61 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255 255 255 / 0.9);
+  background: #004d40;
+  box-shadow: 0 4px 15px rgb(0 77 64 / 0.4);
+  color: #e0f2f1;
+  z-index: 100;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  padding: 10px 0;
-  z-index: 20;
+  padding: 20px 10px;
   user-select: none;
 }
 
 .title {
-  font-size: 32px;
-  font-weight: bold;
-  color: #004d40;
-  margin: 0;
+  margin: 0 0 12px 0;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
 }
 
 .controls {
-  position: fixed;
-  top: 60px;
-  left: 0;
-  width: 140px;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding-left: 10px;
-  box-sizing: border-box;
-  z-index: 10;
-  user-select: none;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 720px;
 }
 
 .controls button {
   background: #00796b;
-  color: white;
   border: none;
-  border-radius: 8px;
-  padding: 8px 12px;
-  cursor: pointer;
+  border-radius: 30px;
+  padding: 10px 22px;
+  color: #e0f2f1;
   font-weight: 600;
-  transition: background 0.3s;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 3px 6px rgb(0 121 107 / 0.3);
   user-select: none;
 }
 
-.controls button:hover {
+.controls button:hover,
+.controls button:focus {
   background: #004d40;
+  box-shadow: 0 5px 15px rgb(0 77 64 / 0.6);
+  outline: none;
 }
 
 .scene {
-  width: 300px;
-  height: 300px;
-  perspective: 1000px;
-  margin-top: 60px;
-  margin-left: 160px;
-  margin-right: auto;
+  width: 320px;
+  height: 320px;
+  margin: 0 auto;
+  perspective: 1200px;
+  cursor: grab;
 }
 
 .cube {
@@ -74,62 +80,88 @@ body {
   transform-style: preserve-3d;
   transform: rotateX(-20deg) rotateY(20deg);
   transition: transform 0.5s ease;
+  user-select: none;
 }
 
 .face {
   position: absolute;
-  width: 300px;
-  height: 300px;
-  padding: 20px;
-  box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.95);
-  border: 2px solid #00796b;
-  border-radius: 12px;
-  text-align: center;
+  width: 320px;
+  height: 320px;
+  padding: 30px;
+  background: #e0f2f1;
+  border-radius: 15px;
+  border: 2px solid #004d40;
+  box-shadow: 0 4px 10px rgb(0 77 64 / 0.2);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
+  color: #004d40;
 }
 
 .face h2 {
-  margin-bottom: 10px;
-  color: #00796b;
+  margin-bottom: 16px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
-.face.front  { transform: rotateY(  0deg) translateZ(150px); }
-.face.back   { transform: rotateY(180deg) translateZ(150px); }
-.face.right  { transform: rotateY( 90deg) translateZ(150px); }
-.face.left   { transform: rotateY(-90deg) translateZ(150px); }
-.face.top    { transform: rotateX( 90deg) translateZ(150px); }
-.face.bottom { transform: rotateX(-90deg) translateZ(150px); }
+.face.front  { transform: rotateY(  0deg) translateZ(160px); }
+.face.back   { transform: rotateY(180deg) translateZ(160px); }
+.face.right  { transform: rotateY( 90deg) translateZ(160px); }
+.face.left   { transform: rotateY(-90deg) translateZ(160px); }
+.face.top    { transform: rotateX( 90deg) translateZ(160px); }
+.face.bottom { transform: rotateX(-90deg) translateZ(160px); }
 
-ul { padding: 0; list-style: none; }
-li { margin: 5px 0; }
+ul {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
 
-@media (max-width: 599px) {
+li {
+  margin: 6px 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding-top: 110px;
+  }
+
   .header {
-    justify-content: center;
+    padding: 15px 8px;
   }
 
   .title {
-    font-size: 24px;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
   }
 
   .controls {
-    position: fixed;
-    top: 48px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: auto;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px 12px;
-    padding-left: 0;
+    max-width: 100%;
+    gap: 8px;
+  }
+
+  .controls button {
+    flex: 1 1 45%;
+    padding: 10px 8px;
+    font-size: 0.95rem;
   }
 
   .scene {
-    margin-top: 100px;
-    margin-left: 0;
+    width: 280px;
+    height: 280px;
+  }
+
+  .face {
+    width: 280px;
+    height: 280px;
+    padding: 20px;
+  }
+
+  .face.front, .face.back, .face.right, .face.left, .face.top, .face.bottom {
+    transform: translateZ(140px);
   }
 }
