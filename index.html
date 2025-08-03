@@ -1,34 +1,52 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Мумбаева Асана</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Мумбаев Асан</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="container">
-    <div class="controls">
-      <button type="button" data-face="front">О себе</button>
-      <button type="button" data-face="back">Цель</button>
-      <button type="button" data-face="right">Навыки</button>
-      <button type="button" data-face="left">Образование</button>
-      <button type="button" data-face="top">Опыт</button>
-      <button type="button" data-face="bottom">Контакты</button>
-    </div>
+  <div class="controls">
+    <button data-face="front">О себе</button>
+    <button data-face="back">Цель</button>
+    <button data-face="right">Навыки</button>
+    <button data-face="left">Образование</button>
+    <button data-face="top">Опыт</button>
+    <button data-face="bottom">Контакты</button>
+  </div>
 
-    <div class="scene">
-      <div class="cube" id="cube">
-        <div class="face front"><h2>О себе</h2><p>Мумбаев Асан, 18 лет, г. Ош.<br>Тел: <a href="tel:773674232">773 67 42 32</a></p></div>
-        <div class="face back"><h2>Цель</h2><p>Прохождение стажировки фронтенд-разработчиком с целью получения практического опыта и дальнейшего трудоустройства.</p></div>
-        <div class="face right"><h2>Навыки</h2><ul><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>React</li></ul></div>
-        <div class="face left"><h2>Образование</h2><p>Курсы в GEEKS<br>окончание 01.08.2025.</p></div>
-        <div class="face top"><h2>Опыт</h2><p>Пока без опыта, но готов учиться.</p></div>
-        <div class="face bottom"><h2>Контакты</h2><p><a href="tel:773674232">Тел: 773 67 42 32</a></p></div>
+  <div class="scene">
+    <div class="cube" id="cube">
+      <div class="face front">
+        <h2>О себе</h2>
+        <p>Мумбаев Асан Курсаналиевич, 18 лет, г. Ош. Телефон: 773 67 42 32.</p>
+      </div>
+      <div class="face back">
+        <h2>Цель</h2>
+        <p>Стажировка фронтенд-разработчиком для получения опыта и дальнейшего трудоустройства.</p>
+      </div>
+      <div class="face right">
+        <h2>Навыки</h2>
+        <ul>
+          <li>HTML5</li><li>CSS3</li><li>JS</li><li>React</li>
+        </ul>
+      </div>
+      <div class="face left">
+        <h2>Образование</h2>
+        <p>Курсы фронтенд в GEEKS, окончание 01.08.2025.</p>
+      </div>
+      <div class="face top">
+        <h2>Опыт</h2>
+        <p>Пока без опыта, но готов учиться и работать в команде.</p>
+      </div>
+      <div class="face bottom">
+        <h2>Контакты</h2>
+        <p>Тел: 773 67 42 32<br></p>
       </div>
     </div>
   </div>
 
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
 </body>
 </html>
