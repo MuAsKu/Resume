@@ -9,17 +9,18 @@
 <body>
   <header class="header">
     <h1 class="title">Резюме</h1>
-    <div class="controls">
-      <button data-face="front">О себе</button>
-      <button data-face="back">Цель</button>
-      <button data-face="right">Образование</button>
-      <button data-face="left">Навыки</button>
-      <button data-face="top">Контакты</button>
-      <button data-face="bottom">Опыт</button>
-    </div>
   </header>
 
-  <div class="scene">
+  <nav class="controls">
+    <button data-face="front">О себе</button>
+    <button data-face="back">Цель</button>
+    <button data-face="right">Образование</button>
+    <button data-face="left">Навыки</button>
+    <button data-face="top">Контакты</button>
+    <button data-face="bottom">Опыт</button>
+  </nav>
+
+  <main class="scene">
     <div class="cube" id="cube">
       <div class="face front">
         <h2>О себе</h2>
@@ -48,7 +49,7 @@
         <p>Тел: 773 67 42 32<br></p>
       </div>
     </div>
-  </div>
+  </main>
 
   <script src="script.js"></script>
 </body>
