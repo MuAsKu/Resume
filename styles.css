@@ -18,7 +18,7 @@ body {
 .title {
   color: white;
   text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-  margin-bottom: 30px;
+  margin-bottom: 100px;
 }
 
 .scene {
@@ -76,7 +76,7 @@ body {
 .face.bottom { transform: rotateX(-90deg) translateZ(125px); }
 
 .controls {
-  margin-top: 30px;
+  margin-top: 70px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
