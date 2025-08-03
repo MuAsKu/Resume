@@ -4,7 +4,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #80deea, #e0f7fa);
+  background: linear-gradient(135deg, #80deea, #4db6ac, #00796b);
   font-family: 'Segoe UI', sans-serif;
   overflow: hidden;
 }
@@ -12,7 +12,7 @@ body {
 .scene {
   width: 300px;
   height: 300px;
-  perspective: 1000px;
+  perspective: 1200px;
 }
 
 .cube {
@@ -20,36 +20,103 @@ body {
   height: 100%;
   position: relative;
   transform-style: preserve-3d;
-  transform: rotateX(-20deg) rotateY(20deg);
-  transition: transform 0.5s ease;
+  transform: rotateX(-25deg) rotateY(25deg);
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  animation: rotate 20s infinite linear;
+}
+
+@keyframes rotate {
+  0% { transform: rotateX(-25deg) rotateY(25deg); }
+  100% { transform: rotateX(335deg) rotateY(385deg); }
 }
 
 .face {
   position: absolute;
-  width: 300px;
-  height: 300px;
-  padding: 20px;
+  width: 100%;
+  height: 100%;
+  padding: 25px;
   box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.95);
-  border: 2px solid #00796b;
-  border-radius: 12px;
-  text-align: center;
+  background: rgba(255, 255, 255, 0.92);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0, 121, 107, 0.3);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.face::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(90deg, #00796b, #4db6ac);
 }
 
 .face h2 {
-  margin-bottom: 10px;
+  margin: 0 0 15px 0;
   color: #00796b;
+  font-size: 24px;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.face.front  { transform: rotateY(  0deg) translateZ(150px); }
-.face.back   { transform: rotateY(180deg) translateZ(150px); }
-.face.right  { transform: rotateY( 90deg) translateZ(150px); }
-.face.left   { transform: rotateY(-90deg) translateZ(150px); }
-.face.top    { transform: rotateX( 90deg) translateZ(150px); }
-.face.bottom { transform: rotateX(-90deg) translateZ(150px); }
+.face ul {
+  padding: 0;
+  list-style: none;
+  width: 80%;
+}
 
-ul { padding: 0; list-style: none; }
-li { margin: 5px 0; }
+.face li {
+  margin: 10px 0;
+  padding: 8px 12px;
+  background: rgba(0, 121, 107, 0.1);
+  border-radius: 6px;
+  color: #00695c;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.face li:hover {
+  background: rgba(0, 121, 107, 0.2);
+  transform: translateX(5px);
+}
+
+.face.front  { transform: rotateY(  0deg) translateZ(150px); background: linear-gradient(145deg, rgba(255,255,255,0.96), rgba(230,255,250,0.95)); }
+.face.back   { transform: rotateY(180deg) translateZ(150px); background: linear-gradient(145deg, rgba(255,255,255,0.96), rgba(230,248,255,0.95)); }
+.face.right  { transform: rotateY( 90deg) translateZ(150px); background: linear-gradient(145deg, rgba(255,255,255,0.96), rgba(255,240,245,0.95)); }
+.face.left   { transform: rotateY(-90deg) translateZ(150px); background: linear-gradient(145deg, rgba(255,255,255,0.96), rgba(240,255,240,0.95)); }
+.face.top    { transform: rotateX( 90deg) translateZ(150px); background: linear-gradient(145deg, rgba(255,255,255,0.96), rgba(250,240,255,0.95)); }
+.face.bottom { transform: rotateX(-90deg) translateZ(150px); background: linear-gradient(145deg, rgba(255,255,255,0.96), rgba(255,250,240,0.95)); }
+
+.face.front::after, .face.back::after,
+.face.right::after, .face.left::after,
+.face.top::after, .face.bottom::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(77, 182, 172, 0.15) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.cube:hover .face.front::after { opacity: 1; }
+.cube:hover .face.back::after  { opacity: 1; }
+.cube:hover .face.right::after  { opacity: 1; }
+.cube:hover .face.left::after   { opacity: 1; }
+.cube:hover .face.top::after    { opacity: 1; }
+.cube:hover .face.bottom::after { opacity: 1; }
+
+.cube:hover {
+  animation-play-state: paused;
+  transform: rotateX(-25deg) rotateY(25deg) scale(1.05);
+}
