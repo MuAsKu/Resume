@@ -78,19 +78,6 @@ li { margin: 5px 0; }
   user-select: none;
 }
 
-@media(max-width: 599px) {
-  .controls {
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px 12px;
-    width: 90vw;
-  }
-}
-
 .controls button {
   background: #00796b;
   color: white;
@@ -104,4 +91,21 @@ li { margin: 5px 0; }
 
 .controls button:hover {
   background: #004d40;
+}
+
+@media (max-width: 599px) {
+  .title {
+    top: 10px;
+  }
+
+  .controls {
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 12px;
+    width: 90vw;
+  }
 }
